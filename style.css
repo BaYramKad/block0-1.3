@@ -49,7 +49,7 @@ header {
   align-items: center;
   column-gap: 12px;
 }
-.menu__navigation span {
+.menu__navigation span.menu__navigation__delimiter {
   display: none;
 }
 
@@ -196,7 +196,7 @@ header {
     display: none;
   }
 
-  .menu__navigation span {
+  .menu__navigation span.menu__navigation__delimiter {
     display: flex;
     width: 2px;
     height: 32px;
