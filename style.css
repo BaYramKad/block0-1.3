@@ -31,7 +31,10 @@ header {
 .menu * {
   display: flex;
   align-items: center;
-  column-gap: 16px;
+  column-gap: 12px;
+}
+.menu__navigation span {
+  display: none;
 }
 
 .menu__navigation::after {
@@ -166,6 +169,19 @@ header {
 
   .menu-options__screen-tablet::after {
     content: '';
+    width: 2px;
+    height: 32px;
+    border-radius: 1px;
+    background: #eaeaea;
+  }
+
+  .menu__navigation::after {
+    content: '';
+    display: none;
+  }
+
+  .menu__navigation span {
+    display: flex;
     width: 2px;
     height: 32px;
     border-radius: 1px;
