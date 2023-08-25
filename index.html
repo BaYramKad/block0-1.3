@@ -8,27 +8,25 @@
   </head>
   <body>
     <header>
-      <nav class="menu">
+      <div class="menu">
         <div class="menu__navigation">
-          <button><img src="./img/burger.svg" alt="menu-burger" class="menu__burget" /></button>
+          <button class="menu__burget"></button>
           <span class="menu__navigation__delimiter"></span>
           <button><img src="./img/logo.svg" alt="logo" class="menu__logo" /></button>
         </div>
 
         <div class="menu__options">
           <div class="menu-options__screen-tablet">
-            <button><img src="./img/screen-tablet/call.svg" alt="call" /></button>
-            <button><img src="./img/screen-tablet/chat.svg" alt="chat" /></button>
-            <button><img src="./img/screen-tablet//profile.svg" alt="profile" /></button>
+            <button></button>
+            <button></button>
+            <button></button>
           </div>
-          <button><img src="./img/repair.svg" alt="repait" class="repair" /></button>
-          <button>
-            <img src="./img/checkstatus.svg" alt="check-status" class="menu__check-status" />
-          </button>
+          <button class="menu__repair-button"></button>
+          <button class="menu__check-status"></button>
         </div>
-      </nav>
+      </div>
 
-      <nav class="menu-desktop">
+      <div class="menu-desktop">
         <div class="menu-desktop__navigation">
           <h2>Услуги и сервисы</h2>
         </div>
@@ -43,7 +41,7 @@
             <img src="./img/checkstatus.svg" alt="check-status" />
           </button>
         </div>
-      </nav>
+      </div>
     </header>
 
     <main class="main-content">
@@ -51,11 +49,13 @@
         <h2>Услуги и сервисы</h2>
       </div>
       <nav class="main-content__tabs">
-        <button class="active">Ремонтируемые бренды</button>
-        <button>Ремонтируемые устройства</button>
-        <button>Цены на услуги</button>
-        <button>Адреса сервисных центров</button>
-        <button>Специальные цены</button>
+        <ul>
+          <li><a class="active" href="#">Ремонтируемые бренды</a></li>
+          <li><a href="#">Ремонтируемые устройства</a></li>
+          <li><a href="#">Цены на услуги</a></li>
+          <li><a href="#">Адреса сервисных центров</a></li>
+          <li><a href="#">Специальные цены</a></li>
+        </ul>
       </nav>
       <div class="main-content__description">
         <div class="main-content__about">
@@ -70,10 +70,10 @@
               обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.
             </p>
           </div>
-          <button class="main-content__read-next">Читать далее</button>
+          <article class="main-content__read-next">Читать далее</article>
         </div>
         <div class="main-content__our-company-img">
-          <img class="main-content__mobile-img" src="./img/back-main.png" alt="" />
+          <img class="main-content__mobile-img" src="./img/main-img.jpg" />
         </div>
       </div>
     </main>
