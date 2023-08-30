@@ -40,6 +40,19 @@ li {
 .menu-desktop__options button:hover {
   background-color: #a8171733;
 }
+
+.menu-desktop__options > .menu-desktop__repair::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-image: url('./img/repair.svg');
+}
+.menu-desktop__options > .menu-desktop__status::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-image: url('./img/checkstatus.svg');
+}
 .main-content__tabs {
   margin-bottom: 10px;
 }
@@ -196,6 +209,10 @@ li {
   position: relative;
   padding-left: 1rem;
   margin: 16px 0;
+}
+
+.main-content__read-next:hover {
+  color: red;
 }
 .main-content__read-next::before {
   content: '';
