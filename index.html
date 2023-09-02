@@ -7,75 +7,82 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>
-      <div class="menu">
-        <div class="menu__navigation">
-          <button class="menu__burget"></button>
-          <span class="menu__navigation__delimiter"></span>
-          <button><img src="./img/logo.svg" alt="logo" class="menu__logo" /></button>
-        </div>
-
-        <div class="menu__options">
-          <div class="menu-options__screen-tablet">
-            <button></button>
-            <button></button>
-            <button></button>
+    <div class="site">
+      <header>
+        <div class="menu">
+          <div class="menu__navigation">
+            <button class="menu__burget"></button>
+            <span class="menu__navigation__delimiter"></span>
+            <button><img src="./img/logo.svg" alt="logo" class="menu__logo" /></button>
           </div>
-          <button class="menu__repair-button"></button>
-          <button class="menu__check-status"></button>
-        </div>
-      </div>
 
-      <div class="menu-desktop">
-        <div class="menu-desktop__navigation">
+          <div class="menu__options">
+            <div class="menu-options__screen-tablet">
+              <button></button>
+              <button></button>
+              <button></button>
+            </div>
+            <button class="menu__repair-button"></button>
+            <button class="menu__check-status"></button>
+          </div>
+        </div>
+
+        <div class="menu-desktop">
+          <div class="menu-desktop__navigation">
+            <h2>Услуги и сервисы</h2>
+          </div>
+
+          <div class="menu-desktop__options">
+            <button class="menu-desktop__repair">
+              <span>Оставить заявку</span>
+            </button>
+            <button class="menu-desktop__status">
+              <span>Статус ремонта</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="main-content__title">
           <h2>Услуги и сервисы</h2>
         </div>
-
-        <div class="menu-desktop__options">
-          <button class="menu-desktop__repair">
-            <span>Оставить заявку</span>
-          </button>
-          <button class="menu-desktop__status">
-            <span>Статус ремонта</span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <main class="main-content">
-      <div class="main-content__title">
-        <h2>Услуги и сервисы</h2>
-      </div>
-      <nav class="main-content__tabs">
-        <ul>
-          <li><a class="active" href="#">Ремонтируемые бренды</a></li>
-          <li><a href="#">Ремонтируемые устройства</a></li>
-          <li><a href="#">Цены на услуги</a></li>
-          <li><a href="#">Адреса сервисных центров</a></li>
-          <li><a href="#">Специальные цены</a></li>
-        </ul>
-      </nav>
-      <article class="main-content__description">
-        <div class="main-content__about">
-          <div class="main-content__story">
-            <p>
-              Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы
-              можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
-            </p>
-            <p>
-              Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что
-              подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам
-              обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.
-            </p>
+        <nav class="main-content__tabs">
+          <ul>
+            <li><a class="active" href="#">Ремонтируемые бренды</a></li>
+            <li><a href="#">Ремонтируемые устройства</a></li>
+            <li><a href="#">Цены на услуги</a></li>
+            <li><a href="#">Адреса сервисных центров</a></li>
+            <li><a href="#">Специальные цены</a></li>
+          </ul>
+        </nav>
+        <article class="main-content__description">
+          <div class="main-content__about">
+            <div class="main-content__story">
+              <p>
+                Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас
+                вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+              </p>
+              <p>
+                Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что
+                подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам
+                обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким. Мы
+                успешно работаем с 1992 года и заслужили репутацию надежного партнера, что
+                подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам
+                обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким. Мы
+                успешно работаем с 1992 года и заслужили репутацию надежного партнера, что
+                подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам
+                обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.
+              </p>
+            </div>
+            <button class="main-content__read-next">Читать далее</button>
           </div>
-          <button class="main-content__read-next">Читать далее</button>
-        </div>
-        <div class="main-content__our-company-img">
-          <img class="main-content__mobile-img" src="./img/main-img.jpg" />
-        </div>
-      </article>
-    </main>
-
+          <div class="main-content__our-company-img">
+            <img class="main-content__mobile-img" src="./img/main-img.jpg" />
+          </div>
+        </article>
+      </main>
+    </div>
     <div class="menu-popup">
       <div class="menu-popup__header">
         <div>
@@ -103,12 +110,20 @@
           <button class="menu-popup__chat"></button>
           <button class="menu-popup__profile"></button>
         </div>
-        <button class="menu-popup__email">mail@cps.com</button>
-        <button class="menu-popup__phone">8 800 890 8900</button>
+        <a href="mailto: mail@cps.com" class="menu-popup__email">mail@cps.com</a>
+        <a href="tel: 8 800 890 8900" class="menu-popup__phone">8 800 890 8900</a>
         <div class="menu-popup__lang">
           <button class="lang-active">RU</button>
           <button>EN</button>
           <button>CH</button>
+          <fieldset class="menu__fieldset">
+            <input type="radio" name="lang" id="ru" checked />
+            <label for="ru">RU</label>
+            <input type="radio" name="lang" id="en" />
+            <label for="en">EN</label>
+            <input type="radio" name="lang" id="ch" />
+            <label for="ch">CH</label>
+          </fieldset>
         </div>
       </div>
     </div>
