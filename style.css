@@ -7,9 +7,6 @@
 body {
   font-family: 'TT Lakes';
   font-weight: normal;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
 }
 .site {
   flex-shrink: 1;
@@ -148,10 +145,10 @@ li {
   letter-spacing: -0.6px;
 }
 .main-content__tabs ul {
-  overflow-x: auto;
   display: flex;
   gap: 18px;
   padding: 22px 15px;
+  overflow-x: auto;
 }
 
 .main-content__tabs li {
@@ -243,7 +240,7 @@ li {
 }
 
 .menu-popup {
-  width: 320px;
+  flex: 0 0 320px;
   height: 100%;
   overflow-y: auto;
   background: white;
@@ -379,15 +376,34 @@ li {
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
   letter-spacing: -0.2px;
 }
 
-.menu-popup__lang button:not(.lang-active):hover {
-  background-color: black;
-  color: white;
+.menu__fieldset {
+  border: none;
+  font-size: 18px;
 }
-.menu-popup__lang button.lang-active {
+
+.menu__fieldset input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.menu__fieldset label {
+  border: 2px solid #cccccc00;
+  border-radius: 2px;
+  margin: 5px;
+  cursor: pointer;
+}
+.menu__fieldset label:not(:has(input:checked)):hover {
+  outline: 2px solid #7e7e82;
+}
+
+.menu__fieldset input:checked + span {
   color: #7e7e82;
 }
 
@@ -430,6 +446,14 @@ li {
   }
 }
 @media screen and (min-width: 1120px) {
+  body {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .main-content__tabs ul {
+    flex-wrap: wrap;
+  }
   .main-content__mobile-img {
     width: 531px;
     height: 383px;
@@ -437,6 +461,8 @@ li {
   .menu-popup {
     display: flex;
     flex-direction: column;
+    box-shadow: none;
+    border-right: 2px solid #41f6d842;
   }
 
   .menu {
@@ -446,7 +472,7 @@ li {
     display: none;
   }
   .main-content__description {
-    width: 1120px;
+    max-width: 1120px;
     margin: 0 auto;
   }
 
