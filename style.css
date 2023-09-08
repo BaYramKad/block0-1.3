@@ -8,9 +8,6 @@ body {
   font-family: 'TT Lakes';
   font-weight: normal;
 }
-.site {
-  flex-shrink: 1;
-}
 button {
   border: none;
   background-color: transparent;
@@ -198,10 +195,6 @@ li {
 .main-content__about p:first-of-type {
   margin-bottom: 10px;
 }
-.main-content__story {
-  height: 90px;
-  overflow-y: auto;
-}
 .main-content__read-next {
   color: #1b1c21;
   font-family: TT Lakes;
@@ -215,16 +208,22 @@ li {
   margin: 16px 0;
 }
 
+.show:hover,
 .main-content__read-next:hover {
   color: red;
 }
-.main-content__read-next::before {
+.main-content__read-next::before,
+.main-content__showMore-companies::before {
   content: '';
   position: absolute;
   width: 24px;
   height: 24px;
   background-image: url('./img/nextread.svg');
   left: 0;
+}
+
+.main-content__read-next.close::before {
+  transform: rotate(180deg) !important;
 }
 .main-content__mobile-img {
   width: 320px;
@@ -294,6 +293,10 @@ li {
 .menu-popup__tabs a.active {
   color: #7e7e82;
 }
+
+.menu-popup__tabs li {
+  position: relative;
+}
 .menu-popup__tabs li:has(a.active)::before {
   content: '';
   position: absolute;
@@ -304,9 +307,10 @@ li {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
 .menu-popup__tabs li a {
   vertical-align: middle;
-  padding: 5px 10px;
+  padding: 8px 20px;
   border-radius: 5px;
 }
 .menu-popup__tabs ul {
@@ -407,9 +411,140 @@ li {
   color: #7e7e82;
 }
 
+.main-content__story p.active-story {
+  visibility: visible !important;
+  height: 100% !important;
+}
+
+.main-content__story p:nth-child(2):not(:has(.active-story)) {
+  visibility: hidden;
+  height: 0px;
+}
+
+.main-content__brands {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.main-content__brands h2 {
+  padding: 15px 16px;
+  color: #7e7e82;
+  font-family: TT Lakes;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+}
+
+.main-content__brand-info img {
+  aspect-ratio: 18/1;
+  object-fit: contain;
+  background-color: #fff;
+}
+
+.brand-info__circle {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url('./img/company-images/go.svg');
+}
+
+.main-content__showMore-companies {
+  margin-left: 1.2em;
+  position: relative;
+  left: 30px;
+  color: #1b1c21;
+  font-family: TT Lakes;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+.main-content__showMore-companies::before {
+  left: -23px;
+}
+
+.main-content__showMore-companies:hover {
+  color: red;
+}
+
+.close::before {
+  transform: rotate(180deg);
+}
+
+.swiper {
+  height: 100px;
+}
+
+.swiper-wrapper {
+  position: relative;
+}
+.swiper-pagination {
+  position: absolute !important;
+  top: 70px !important;
+}
+
+.main-content__choiceBrands {
+  display: none;
+}
+.swiper.slider-1 {
+  display: block;
+}
+.main-content__showMore-companies.showMore {
+  display: none;
+}
+.main-content__brand-info {
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+  padding: 20px 16px;
+  background: #fff;
+}
 @media screen and (min-width: 768px) {
+  .main-content__choiceBrands .swiper-slide:nth-child(n + 9) {
+    display: none;
+  }
+  .swiper-pagination {
+    display: none;
+  }
   .menu-options__screen-tablet {
     display: inherit;
+  }
+
+  .main-content__showMore-companies.showMore {
+    display: block;
+  }
+  .swiper {
+    overflow: visible !important;
+    height: max-content;
+  }
+  .swiper-wrapper {
+    box-sizing: inherit !important;
+  }
+
+  .swiper-wrapper.grid.main-content__choiceBrands {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr)) !important;
+    gap: 16px;
+    background-color: #f8f8f8;
+    padding: 24px;
+    height: max-content;
+  }
+
+  .main-content__brand-info {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+    padding: 20px 16px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #cccccc9a;
+  }
+  .main-content__brand-info:hover {
+    border: 1px solid #000000;
   }
   .menu-options__screen-tablet::after {
     content: '';
@@ -441,15 +576,13 @@ li {
     flex-direction: row;
     align-items: flex-start;
   }
-  .main-content__story {
-    height: 160px;
-  }
 }
+
 @media screen and (min-width: 1120px) {
   body {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center;
   }
   .main-content__tabs ul {
     flex-wrap: wrap;
@@ -463,6 +596,9 @@ li {
     flex-direction: column;
     box-shadow: none;
     border-right: 2px solid #41f6d842;
+    position: sticky;
+    left: 0;
+    top: 0;
   }
 
   .menu {

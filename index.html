@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Block 1.3</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script defer src="./index.js"></script>
   </head>
   <body>
-    <div class="site">
+    <div>
       <header>
         <div class="menu">
           <div class="menu__navigation">
@@ -75,12 +79,109 @@
                 обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.
               </p>
             </div>
-            <button class="main-content__read-next">Читать далее</button>
+            <button class="main-content__read-next show">Читать далее</button>
           </div>
           <div class="main-content__our-company-img">
             <img class="main-content__mobile-img" src="./img/main-img.jpg" />
           </div>
         </article>
+
+        <div class="main-content__brands">
+          <h2>Ремонт техники различных брендов</h2>
+          <div class="swiper slider-1">
+            <div class="swiper-wrapper grid main-content__choiceBrands">
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img src="./img/company-images/lenovo.png" class="brand-info__img" alt="lenovo" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img src="./img/company-images/acer.png" class="brand-info__img" alt="acer" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img src="./img/company-images/apple.png" class="brand-info__img" alt="apple" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img src="./img/company-images/bosh.png" class="brand-info__img" alt="bosh" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img src="./img/company-images/hp.png" class="brand-info__img" alt="hp" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img
+                    src="./img/company-images/samsung.png"
+                    class="brand-info__img"
+                    alt="samsung" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img src="./img/company-images/sony.png" class="brand-info__img" alt="sony" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img
+                    src="./img/company-images/ViewSonic.png"
+                    class="brand-info__img"
+                    alt="ViewSonic" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img src="./img/company-images/apple.png" class="brand-info__img" alt="apple" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img src="./img/company-images/bosh.png" class="brand-info__img" alt="bosh" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img src="./img/company-images/hp.png" class="brand-info__img" alt="hp" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img
+                    src="./img/company-images/samsung.png"
+                    class="brand-info__img"
+                    alt="samsung" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="main-content__brand-info" href="#">
+                  <img src="./img/company-images/sony.png" class="brand-info__img" alt="sony" />
+                  <span class="brand-info__circle"></span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <button class="main-content__showMore-companies showMore">Показать все</button>
+        </div>
       </main>
     </div>
     <div class="menu-popup">
