@@ -6,6 +6,22 @@ const companies = document.querySelectorAll(
   '.main-content__choiceBrands .swiper-slide:nth-child(n + 9)',
 );
 
+const closeBtnPopup = document.querySelector('.menu-popup__close-btn');
+const openBtnPopup = document.querySelector('.menu__burget');
+const popupMenu = document.querySelector('.menu-popup');
+
+document.addEventListener('click', (event) => {
+  if (event.target.matches('.menu__burget')) {
+    popupMenu.classList.remove('popup-state-cloused');
+
+    popupMenu.classList.add('popup-state-open');
+  } else if (event.target.matches('.menu-popup__close-btn')) {
+    popupMenu.classList.remove('popup-state-open');
+
+    popupMenu.classList.add('popup-state-cloused');
+  }
+});
+
 readNextButton.addEventListener('click', (event) => {
   let target = event.target;
   event.preventDefault();
@@ -24,7 +40,7 @@ showMoreCompanies.addEventListener('click', (event) => {
   companies.forEach((item) => {
     const itemDisplay = item.style.display;
     if (itemDisplay === 'none' || itemDisplay === '') {
-      item.style.display = 'grid';
+      item.style.display = 'block';
       target.innerText = 'Скрыть';
       target.classList.add('close');
     } else {

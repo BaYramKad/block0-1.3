@@ -239,14 +239,16 @@ li {
 }
 
 .menu-popup {
-  flex: 0 0 320px;
+  position: fixed;
+  z-index: 2222;
+  width: 100%;
+  top: 0;
+  left: 0;
   height: 100%;
   overflow-y: auto;
   background: white;
-  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
-
   padding: 18px 15px;
-  display: none;
+  transition: transform 250ms ease-in-out;
 }
 
 .menu-popup__header {
@@ -440,7 +442,7 @@ li {
 
 .main-content__brand-info img {
   aspect-ratio: 18/1;
-  object-fit: contain;
+  object-fit: none;
   background-color: #fff;
 }
 
@@ -499,9 +501,32 @@ li {
 .main-content__brand-info {
   display: flex;
   justify-content: center;
-  column-gap: 30px;
-  padding: 20px 16px;
+  border: 1px solid #ccc;
+  column-gap: 60px;
+  padding: 16px 20px;
+  max-width: fit-content;
+  border-radius: 6px;
+  margin: 0 auto;
   background: #fff;
+}
+
+.popup-state-cloused {
+  transform: translateX(-100%);
+  box-shadow: none;
+}
+.popup-state-open {
+  transform: translateX(0);
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+}
+
+body:has(.popup-state-open) {
+  overflow-y: hidden;
+}
+
+@media screen and (min-width: 425px) {
+  .menu-popup {
+    width: fit-content;
+  }
 }
 @media screen and (min-width: 768px) {
   .main-content__choiceBrands .swiper-slide:nth-child(n + 9) {
@@ -540,8 +565,9 @@ li {
     column-gap: 10px;
     padding: 20px 16px;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid #cccccc9a;
+    max-width: inherit;
   }
   .main-content__brand-info:hover {
     border: 1px solid #000000;
@@ -597,6 +623,8 @@ li {
     box-shadow: none;
     border-right: 2px solid #41f6d842;
     position: sticky;
+    transform: translateX(0);
+    flex: 0 0 320px;
     left: 0;
     top: 0;
   }
@@ -629,5 +657,9 @@ li {
   .menu-desktop__options button:focus {
     outline: 2px solid #000;
     border-radius: 5px;
+  }
+
+  .menu-popup__close-btn {
+    display: none;
   }
 }
