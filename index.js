@@ -9,16 +9,20 @@ const companies = document.querySelectorAll(
 const closeBtnPopup = document.querySelector('.menu-popup__close-btn');
 const openBtnPopup = document.querySelector('.menu__burget');
 const popupMenu = document.querySelector('.menu-popup');
+const outside = document.querySelector('.outside');
 
 document.addEventListener('click', (event) => {
   if (event.target.matches('.menu__burget')) {
     popupMenu.classList.remove('popup-state-cloused');
-
     popupMenu.classList.add('popup-state-open');
-  } else if (event.target.matches('.menu-popup__close-btn')) {
+    outside.classList.add('menu-popup__click-outside');
+  } else if (
+    event.target.matches('.menu-popup__close-btn') ||
+    event.target.matches('.menu-popup__click-outside')
+  ) {
     popupMenu.classList.remove('popup-state-open');
-
     popupMenu.classList.add('popup-state-cloused');
+    outside.classList.remove('menu-popup__click-outside');
   }
 });
 
