@@ -185,7 +185,7 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .main-content__about {
@@ -213,7 +213,7 @@ li {
   color: red;
 }
 .main-content__read-next::before,
-.main-content__showMore-companies::before {
+.showMore::before {
   content: '';
   position: absolute;
   width: 24px;
@@ -285,7 +285,7 @@ li {
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
   letter-spacing: -0.2px;
 }
 
@@ -353,7 +353,7 @@ li {
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 32px; /* 133.333% */
+  line-height: 32px;
   letter-spacing: -0.6px;
 }
 .menu-popup__phone:hover {
@@ -425,7 +425,8 @@ li {
 
 .main-content__brands {
   position: relative;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
+  display: block;
 }
 
 .main-content__brands h2 {
@@ -438,6 +439,17 @@ li {
   line-height: 24px;
   letter-spacing: -0.2px;
   text-transform: uppercase;
+  background: linear-gradient(to left, white, transparent);
+  position: relative;
+}
+.main-content__brands h2::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to left, #d9fff5, transparent);
 }
 
 .main-content__brand-info img {
@@ -446,14 +458,15 @@ li {
   background-color: #fff;
 }
 
-.brand-info__circle {
+.brand-info__circle,
+.equipment-repair__circle {
   display: inline-block;
   width: 40px;
   height: 40px;
   background-image: url('./img/company-images/go.svg');
 }
 
-.main-content__showMore-companies {
+.showMore {
   margin-left: 1.2em;
   position: relative;
   left: 30px;
@@ -465,11 +478,11 @@ li {
   line-height: 24px;
   letter-spacing: -0.2px;
 }
-.main-content__showMore-companies::before {
+.showMore::before {
   left: -23px;
 }
 
-.main-content__showMore-companies:hover {
+.showMore:hover {
   color: red;
 }
 
@@ -478,15 +491,12 @@ li {
 }
 
 .swiper {
-  height: 150px;
+  top: 22px;
 }
 
-.swiper-wrapper {
-  position: relative;
-}
 .swiper-pagination {
-  position: absolute !important;
-  top: 80px !important;
+  height: fit-content;
+  position: static !important;
 }
 
 .main-content__choiceBrands {
@@ -495,7 +505,7 @@ li {
 .swiper.slider-1 {
   display: block;
 }
-.main-content__showMore-companies.showMore {
+.showMore {
   display: none;
 }
 .main-content__brand-info {
@@ -523,12 +533,98 @@ body:has(.popup-state-open) {
   overflow-y: hidden;
 }
 
+.main-content,
+header {
+  background: #f8f8f8;
+}
+
+.main-content__equipment-repair {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  padding: 16px 16px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #cccccc9a;
+  max-width: 240px;
+  height: 160px;
+  margin: 0 auto;
+}
+
+.main-content__equipment-repair span:first-child {
+  font-size: 16px;
+}
+.main-content__equipment-repair span:last-child {
+  align-self: flex-end;
+}
+
+.repair-slide:nth-child(n + 5) {
+  display: none;
+}
+
+.main-content__jobInformation {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  border-radius: 6px;
+  background: #fff;
+  max-width: 250px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 16px 16px;
+}
+.main-content__jobInformation div {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content__jobInformation div span:first-child {
+  color: #7e7e82;
+  font-size: 14px;
+}
+
+.main-content__jobInformation .term-info {
+  display: flex;
+  flex-direction: row;
+  column-gap: 13px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.term-info__order-btn {
+  color: white;
+  padding: 9px 36px 9px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  background: #ff3e79;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.15px;
+  position: relative;
+}
+.term-info__order-btn::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url('./img/job-info-img/goside.svg');
+  background-repeat: no-repeat;
+  right: 8px;
+}
+/* 
+* {
+  outline: 1px solid red;
+} */
+
 @media screen and (min-width: 425px) {
   .menu-popup {
     width: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
   }
   .menu-popup__click-outside {
     position: fixed;
@@ -544,6 +640,49 @@ body:has(.popup-state-open) {
   }
 }
 @media screen and (min-width: 768px) {
+  /* .main-content__jobInformation {
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 16px;
+    border-radius: 6px;
+    background: #fff;
+    max-width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 16px 16px;
+  } */
+
+  .main-content__jobInformation {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0px, auto)) !important;
+    justify-content: space-between;
+    column-gap: 16px;
+    align-items: center;
+    border-radius: 6px;
+    background: #fff;
+    max-width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 16px 16px;
+  }
+  .main-content__jobInformation .term-info {
+    column-gap: 20px;
+  }
+  .main-content__jobInformation .price-info {
+    /* justify-self: center; */
+  }
+  .main-content__services {
+    display: grid !important;
+    grid-template-rows: repeat(auto-fit, minmax(0px, 1fr)) !important;
+    gap: 16px;
+    background-color: #f8f8f8;
+    padding: 24px;
+    height: max-content;
+  }
   .main-content__choiceBrands .swiper-slide:nth-child(n + 9) {
     display: none;
   }
@@ -553,13 +692,13 @@ body:has(.popup-state-open) {
   .menu-options__screen-tablet {
     display: inherit;
   }
-
-  .main-content__showMore-companies.showMore {
+  .showMore {
     display: block;
   }
   .swiper {
     overflow: visible !important;
     height: max-content;
+    top: 0;
   }
   .swiper-wrapper {
     box-sizing: inherit !important;
@@ -584,7 +723,9 @@ body:has(.popup-state-open) {
     border: 1px solid #cccccc9a;
     max-width: inherit;
   }
-  .main-content__brand-info:hover {
+
+  .main-content__brand-info:hover,
+  .main-content__equipment-repair:hover {
     border: 1px solid #000000;
   }
   .menu-options__screen-tablet::after {
@@ -650,7 +791,7 @@ body:has(.popup-state-open) {
   }
   .main-content__description {
     max-width: 1120px;
-    margin: 0 auto;
+    margin: 20px auto;
   }
 
   .menu-desktop {
@@ -667,6 +808,7 @@ body:has(.popup-state-open) {
     display: flex;
     align-items: center;
     column-gap: 8px;
+    background-color: transparent;
   }
   .menu-desktop__options button:focus {
     outline: 2px solid #000;

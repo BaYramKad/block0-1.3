@@ -1,10 +1,11 @@
 const readNextButton = document.querySelector('.main-content__read-next');
 const storyParagraph = document.querySelector('.main-content__story p:nth-child(2)');
 
-const showMoreCompanies = document.querySelector('.main-content__showMore-companies');
 const companies = document.querySelectorAll(
   '.main-content__choiceBrands .swiper-slide:nth-child(n + 9)',
 );
+
+const repairSlides = document.querySelectorAll('.repair-slide:nth-child(n + 5)');
 
 const closeBtnPopup = document.querySelector('.menu-popup__close-btn');
 const openBtnPopup = document.querySelector('.menu__burget');
@@ -39,9 +40,8 @@ readNextButton.addEventListener('click', (event) => {
   }
 });
 
-showMoreCompanies.addEventListener('click', (event) => {
-  let target = event.target;
-  companies.forEach((item) => {
+const showMoreItems = (items, target) => {
+  items.forEach((item) => {
     const itemDisplay = item.style.display;
     if (itemDisplay === 'none' || itemDisplay === '') {
       item.style.display = 'block';
@@ -53,6 +53,15 @@ showMoreCompanies.addEventListener('click', (event) => {
       target.classList.remove('close');
     }
   });
+};
+
+document.addEventListener('click', (event) => {
+  const target = event.target;
+  if (target.matches('.main-content__showMore-companies')) {
+    showMoreItems(companies, target);
+  } else if (target.matches('.main-content__showMore-repair')) {
+    showMoreItems(repairSlides, target);
+  }
 });
 
 const resizableSwiper = (breakpoint, swiperClass, swiperSettings) => {
@@ -77,6 +86,26 @@ const resizableSwiper = (breakpoint, swiperClass, swiperSettings) => {
 };
 
 resizableSwiper('(max-width: 768px)', '.slider-1', {
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+});
+
+resizableSwiper('(max-width: 768px)', '.slider-2', {
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+});
+
+resizableSwiper('(max-width: 768px)', '.slider-3', {
   loop: true,
   pagination: {
     el: '.swiper-pagination',
