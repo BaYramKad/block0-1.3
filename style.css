@@ -423,9 +423,9 @@ li {
   height: 0px;
 }
 
-.main-content__brands {
+.main-content__brands:not(:last-child) {
   position: relative;
-  padding-bottom: 50px;
+  padding-top: 50px;
   display: block;
 }
 
@@ -615,10 +615,143 @@ header {
   background-repeat: no-repeat;
   right: 8px;
 }
+
+.main-content__info {
+  display: none !important;
+}
 /* 
 * {
   outline: 1px solid red;
 } */
+
+.comercial-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.comercial-info p {
+  color: #1b1c21;
+  font-family: TT Lakes;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
+
+.comercial-info a {
+  color: #1b1c21;
+  font-family: TT Lakes;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+}
+.comercial-info a::after {
+  content: '';
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  top: -2px;
+  width: 24px;
+  height: 24px;
+  background-image: url('./img/more.svg');
+}
+
+.footer {
+  color: #7e7e82;
+  font-family: TT Lakes;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  row-gap: 16px;
+}
+
+.call-popup-state-cloused {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 440px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+}
+
+.call-popup-state-cloused div:first-child::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 35px;
+  width: 4px;
+  height: 40px;
+  background-color: #41f6d7;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.call-popup-state-cloused::before {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: -70px;
+  width: 40px;
+  height: 40px;
+  background-image: url('./img/popup-images/close.svg');
+  background-repeat: no-repeat;
+}
+
+.call-popup-state-cloused input {
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  background: #fff;
+  padding: 12px 16px;
+  width: 100%;
+}
+.call-popup__send {
+  display: flex;
+  justify-content: end;
+}
+
+.call-popup-state-cloused input::placeholder {
+  color: #b5b6bc;
+}
+
+.call-popup__title {
+  color: #1b1c21;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+}
+
+.call-popup__agree-data {
+  color: #7e7e82;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+.call-popup__agree-data a {
+  color: #ff3e79;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.call-popup__btn {
+  align-self: end;
+}
 
 @media screen and (min-width: 425px) {
   .menu-popup {
@@ -640,21 +773,29 @@ header {
   }
 }
 @media screen and (min-width: 768px) {
-  /* .main-content__jobInformation {
-    font-size: 14px;
+  .footer {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    align-items: flex-start;
     row-gap: 16px;
-    border-radius: 6px;
-    background: #fff;
-    max-width: 100%;
-    height: fit-content;
-    margin: 0 auto;
-    padding: 16px 16px;
-  } */
+  }
+  .footer p:nth-child(1) {
+    text-align: start;
+    flex: 0 0 33.33%;
+  }
+  .footer p:nth-child(2) {
+    text-align: inherit;
+    flex: 0 0 33.33%;
+  }
+  .footer p:nth-child(3) {
+    flex: 0 0 33.33%;
+    text-align: end;
+  }
 
+  .comercial-info p {
+    max-width: 421px;
+  }
   .main-content__jobInformation {
     font-size: 14px;
     display: grid;
@@ -669,18 +810,35 @@ header {
     margin: 0 auto;
     padding: 16px 16px;
   }
-  .main-content__jobInformation .term-info {
+  .main-content__jobInformation div span:first-child {
+    display: none;
+  }
+  .main-content__info {
+    display: block !important;
+    padding: 15px 24px 0 24px;
+  }
+
+  .inforamation {
+    background: transparent !important;
+  }
+
+  .inforamation div span:first-child {
+    display: grid;
+  }
+  .inforamation .term-info {
+    width: 217px;
     column-gap: 20px;
   }
-  .main-content__jobInformation .price-info {
-    /* justify-self: center; */
+  .inforamation .price-info {
+    width: 217px;
+    text-align: end;
   }
   .main-content__services {
     display: grid !important;
     grid-template-rows: repeat(auto-fit, minmax(0px, 1fr)) !important;
     gap: 16px;
     background-color: #f8f8f8;
-    padding: 24px;
+    padding: 0 24px 24px 24px;
     height: max-content;
   }
   .main-content__choiceBrands .swiper-slide:nth-child(n + 9) {

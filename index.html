@@ -238,24 +238,26 @@
           <button class="main-content__showMore-repair showMore">Показать все</button>
         </section>
 
+        <!-- main-content__info -->
+
         <section class="main-content__brands">
           <h2>Цены на услуги</h2>
+
+          <div class="main-content__info">
+            <div class="main-content__jobInformation inforamation">
+              <div class="repair-services">
+                <span>Ремонтные услуги</span>
+              </div>
+              <div class="price-info">
+                <span>Цена</span>
+              </div>
+              <div class="term-info">
+                <span>Срок</span>
+              </div>
+            </div>
+          </div>
           <div class="swiper slider-3">
             <div class="swiper-wrapper grid main-content__services">
-              <div class="swiper-slide">
-                <div class="main-content__jobInformation inforamation">
-                  <div class="repair-services">
-                    <span>Ремонтные услуги</span>
-                  </div>
-                  <div class="price-info">
-                    <span>Цена</span>
-                  </div>
-                  <div class="term-info">
-                    <span>Срок</span>
-                  </div>
-                </div>
-              </div>
-
               <div class="swiper-slide">
                 <div class="main-content__jobInformation">
                   <div class="repair-services">
@@ -344,6 +346,19 @@
             <div class="swiper-pagination"></div>
           </div>
         </section>
+
+        <div class="comercial-info">
+          <p>
+            Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для
+            получения коммерческого предложения на постоянное обслуживание, оставьте заявку.
+          </p>
+          <a href="#">Получить коммерческое предложение</a>
+        </div>
+        <footer class="footer">
+          <p>© 2019 CPS Разработано командой Apesong</p>
+          <p>Политика конфиденциальности</p>
+          <p>Информация, размещенная на данной странице, не является публичной офертой</p>
+        </footer>
       </main>
     </div>
 
@@ -393,6 +408,27 @@
               </label>
             </fieldset>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="call-outside">
+      <div class="call-popup call-popup-state-cloused">
+        <div>
+          <h2 class="call-popup__title">Заказать звонок</h2>
+        </div>
+        <div>
+          <input type="number" placeholder="Телефон" />
+        </div>
+        <div>
+          <p class="call-popup__agree-data">
+            Нажимая “отправить”, вы даете согласие на
+            <a href="#">обработку персональных данных</a> и соглашаетесь с нашей
+            <a href="#">политикой конфиденциальности</a>
+          </p>
+        </div>
+        <div class="call-popup__send">
+          <button class="term-info__order-btn call-popup__btn">Отправить</button>
         </div>
       </div>
     </div>
