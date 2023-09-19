@@ -22,8 +22,8 @@
 
           <div class="menu__options">
             <div class="menu-options__screen-tablet">
-              <button></button>
-              <button></button>
+              <button class="call-for-support"></button>
+              <button class="feedback-for-support"></button>
               <button></button>
             </div>
             <button class="menu__repair-button"></button>
@@ -386,8 +386,8 @@
         </nav>
         <div class="menu-popup__contacts">
           <div>
-            <button class="menu-popup__call"></button>
-            <button class="menu-popup__chat"></button>
+            <button class="menu-popup__call call-for-support"></button>
+            <button class="menu-popup__chat feedback-for-support"></button>
             <button class="menu-popup__profile"></button>
           </div>
           <a href="mailto: mail@cps.com" class="menu-popup__email">mail@cps.com</a>
@@ -414,6 +414,7 @@
 
     <div class="call-outside">
       <div class="call-popup call-popup-state-cloused">
+        <button class="call-popup__clouse-btn"></button>
         <div>
           <h2 class="call-popup__title">Заказать звонок</h2>
         </div>
@@ -429,6 +430,36 @@
         </div>
         <div class="call-popup__send">
           <button class="term-info__order-btn call-popup__btn">Отправить</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-outside">
+      <div class="feedback-popup feedback-popup-state-cloused">
+        <button class="feedback-popup__clouse-btn"></button>
+        <div>
+          <h2 class="feedback-popup__title">Обратная связь</h2>
+        </div>
+        <div>
+          <input type="text" placeholder="Имя" />
+          <input type="number" placeholder="Телефон" />
+          <input type="email" placeholder="Электронная почта" />
+          <textarea
+            placeholder="Сообщение"
+            name="message"
+            id="message-1"
+            cols="30"
+            rows="5"></textarea>
+        </div>
+        <div>
+          <p class="feedback-popup__agree-data">
+            Нажимая “отправить”, вы даете согласие на
+            <a href="#">обработку персональных данных</a> и соглашаетесь с нашей
+            <a href="#">политикой конфиденциальности</a>
+          </p>
+        </div>
+        <div class="feedback-popup__send">
+          <button class="term-info__order-btn feedback-popup__btn">Отправить</button>
         </div>
       </div>
     </div>

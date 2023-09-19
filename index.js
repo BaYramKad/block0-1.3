@@ -12,6 +12,42 @@ const openBtnPopup = document.querySelector('.menu__burget');
 const popupMenu = document.querySelector('.menu-popup');
 const outside = document.querySelector('.outside');
 
+const callPopupItem = document.querySelector('.call-popup');
+const callOutsideItems = document.querySelector('.call-outside');
+
+const feedBackPopupItem = document.querySelector('.feedback-popup');
+const feedBackOutsideItem = document.querySelector('.feedback-outside');
+
+document.addEventListener('click', (event) => {
+  if (event.target.matches('.feedback-for-support')) {
+    feedBackPopupItem.classList.remove('feedback-popup-state-cloused');
+    feedBackPopupItem.classList.add('feedback-popup-state-open');
+    feedBackOutsideItem.classList.add('feedback-popup-click-outside');
+  } else if (
+    event.target.matches('.feedback-popup__clouse-btn') ||
+    event.target.matches('.feedback-popup-click-outside')
+  ) {
+    feedBackPopupItem.classList.remove('feedback-popup-state-open');
+    feedBackOutsideItem.classList.remove('feedback-popup-click-outside');
+    feedBackPopupItem.classList.add('feedback-popup-state-cloused');
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (event.target.matches('.call-for-support')) {
+    callPopupItem.classList.remove('call-popup-state-cloused');
+    callPopupItem.classList.add('call-popup-state-open');
+    callOutsideItems.classList.add('call-popup-click-outside');
+  } else if (
+    event.target.matches('.call-popup__clouse-btn') ||
+    event.target.matches('.call-popup-click-outside')
+  ) {
+    callPopupItem.classList.remove('call-popup-state-open');
+    callOutsideItems.classList.remove('call-popup-click-outside');
+    callPopupItem.classList.add('call-popup-state-cloused');
+  }
+});
+
 document.addEventListener('click', (event) => {
   if (event.target.matches('.menu__burget')) {
     popupMenu.classList.remove('popup-state-cloused');
