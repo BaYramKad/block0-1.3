@@ -970,8 +970,8 @@ body:has(.feedback-popup-state-open) {
   }
   .main-content__jobInformation {
     font-size: 14px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0px, auto)) !important;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     column-gap: 16px;
     align-items: center;
@@ -981,6 +981,12 @@ body:has(.feedback-popup-state-open) {
     height: fit-content;
     margin: 0 auto;
     padding: 16px 16px;
+    div {
+      flex-basis: 33.33%;
+      &.price-info {
+        flex-basis: auto;
+      }
+    }
     div span:first-child {
       display: none;
     }
@@ -993,15 +999,7 @@ body:has(.feedback-popup-state-open) {
   .inforamation {
     background: transparent !important;
     div span:first-child {
-      display: grid;
-    }
-    .term-info {
-      width: 217px;
-      column-gap: 20px;
-    }
-    .price-info {
-      width: 217px;
-      text-align: end;
+      display: flex;
     }
   }
 

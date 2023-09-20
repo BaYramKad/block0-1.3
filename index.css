@@ -1027,8 +1027,13 @@ body:has(.feedback-popup-state-open) {
 
   .main-content__jobInformation {
     font-size: 14px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0px, auto)) !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -1045,6 +1050,12 @@ body:has(.feedback-popup-state-open) {
     height: fit-content;
     margin: 0 auto;
     padding: 16px 16px; }
+    .main-content__jobInformation div {
+      -ms-flex-preferred-size: 33.33%;
+          flex-basis: 33.33%; }
+      .main-content__jobInformation div.price-info {
+        -ms-flex-preferred-size: auto;
+            flex-basis: auto; }
     .main-content__jobInformation div span:first-child {
       display: none; }
 
@@ -1055,14 +1066,9 @@ body:has(.feedback-popup-state-open) {
   .inforamation {
     background: transparent !important; }
     .inforamation div span:first-child {
-      display: grid; }
-    .inforamation .term-info {
-      width: 217px;
-      -webkit-column-gap: 20px;
-              column-gap: 20px; }
-    .inforamation .price-info {
-      width: 217px;
-      text-align: end; }
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
 
   .main-content__services {
     display: grid !important;
