@@ -6,7 +6,6 @@ const storyParagraph = document.querySelector('.main-content__story p:nth-child(
 const companies = document.querySelectorAll(
   '.main-content__choiceBrands .swiper-slide:nth-child(n + 9)',
 );
-
 const repairSlides = document.querySelectorAll('.repair-slide:nth-child(n + 5)');
 
 const closeBtnPopup = document.querySelector('.menu-popup__close-btn');
@@ -19,6 +18,13 @@ const callOutsideItems = document.querySelector('.call-outside');
 
 const feedBackPopupItem = document.querySelector('.feedback-popup');
 const feedBackOutsideItem = document.querySelector('.feedback-outside');
+
+window.addEventListener('resize', () => {
+  if (window.screen.width <= 768) {
+    repairSlides.forEach((item) => (item.style.display = 'block'));
+    companies.forEach((item) => (item.style.display = 'block'));
+  }
+});
 
 document.addEventListener('click', (event) => {
   if (event.target.matches('.feedback-for-support')) {

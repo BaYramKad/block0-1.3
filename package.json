@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://bayramkad.github.io/block0-1.3/",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "predeploy": "npm run build",
